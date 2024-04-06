@@ -9,6 +9,7 @@ import { createUser, deleteUser, updateUser } from "@/lib/actions/users.actions"
 
 export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
+  console.log("Webhook POST request received");
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
 
   if (!WEBHOOK_SECRET) {
@@ -19,12 +20,14 @@ export async function POST(req: Request) {
 
   // Get the headers
   const headerPayload = headers();
+  console.log("Received headers", headerPayload);
   const svix_id = headerPayload.get("svix-id");
   const svix_timestamp = headerPayload.get("svix-timestamp");
   const svix_signature = headerPayload.get("svix-signature");
 
   // If there are no headers, error out
   if (!svix_id || !svix_timestamp || !svix_signature) {
+    console.error("Missing svix headers");
     return new Response("Error occured -- no svix headers", {
       status: 400,
     });
@@ -32,6 +35,8 @@ export async function POST(req: Request) {
 
   // Get the body
   const payload = await req.json();
+  console.log("Received payload:", payload);
+  
   const body = JSON.stringify(payload);
 
   // Create a new Svix instance with your secret.
@@ -46,12 +51,14 @@ export async function POST(req: Request) {
       "svix-timestamp": svix_timestamp,
       "svix-signature": svix_signature,
     }) as WebhookEvent;
+    console.log("Webhook event verified:", evt);
   } catch (err) {
     console.error("Error verifying webhook:", err);
     return new Response("Error occured", {
       status: 400,
     });
   }
+  console.log(`Handling event type: ${evt.type}`);
 
   // Get the ID and type
   const { id } = evt.data;
