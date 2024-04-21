@@ -70,7 +70,7 @@ const TransformedImage = ({ image, type, title, transformationConfig, isTransfor
                 height={50}
                 alt="spinner"
               />
-              <p className="text-white/80">Please wait...</p>
+              <p className="text-white/80">Please wait,might take a min...</p>
             </div>
           )}
         </div>
