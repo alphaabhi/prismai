@@ -14,8 +14,9 @@ const Home = async ({ searchParams }: SearchParamProps) => {
     <>
       <section className="home">
         <h1 className="home-heading">
-        STOP WORKING SO HARD 
-        BE SMART WITH PRISMAI
+        STOP WORKING HARD 
+        BE SMART WITH
+         PRISMAI
         </h1>
         <ul className="flex-center w-full gap-20">
           {navLinks.slice(1, 5).map((link) => (
