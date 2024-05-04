@@ -1,6 +1,7 @@
 import { Collection } from "@/components/shared/Collection"
 import { navLinks } from "@/constants"
 import { getAllImages } from "@/lib/actions/image.actions"
+import Footer from "@/components/shared/Footer";
 import Image from "next/image"
 import Link from "next/link"
 
@@ -11,7 +12,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
   const images = await getAllImages({ page, searchQuery})
 
   return (
-    <>
+    <div className="home-page">
       <section className="home">
         <h1 className="home-heading">
        Amazingly easy content creation.
@@ -40,7 +41,9 @@ const Home = async ({ searchParams }: SearchParamProps) => {
           page={page}
         />
       </section>
-    </>
+
+      <Footer />
+    </div>
   )
 }
 
