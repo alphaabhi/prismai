@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -224,7 +226,11 @@
   }
 
   .home-heading {
-    @apply h1-semibold max-w-[500px] flex-wrap text-center text-white shadow-sm;
+    @apply text-[36px] font-bold leading-tight text-center text-white;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap; /* Ensures the text is in one line */
+    overflow: hidden; /* Keeps the text from spilling over */
+    text-overflow: ellipsis; /* Adds an ellipsis if the text is too long */
   }
 
   /* Credits Page */

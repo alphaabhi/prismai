@@ -14,7 +14,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
     <>
       <section className="home">
         <h1 className="home-heading">
-       Amazingly easy content creation?
+       Amazingly easy content creation.
         </h1>
         <ul className="flex-center w-full gap-30">
           {navLinks.slice(1, 5).map((link) => (
