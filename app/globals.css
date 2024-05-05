@@ -330,7 +330,7 @@
 
 .footer a:hover {
     opacity: 0.8; /* Dim links on hover */
-
+}
   .header-nav_elements {
     @apply mt-8 flex w-full flex-col items-start gap-5;
   }
