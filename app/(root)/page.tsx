@@ -12,10 +12,10 @@ const Home = async ({ searchParams }: SearchParamProps) => {
   const images = await getAllImages({ page, searchQuery})
 
   return (
-    <div className="home-page">
+    <div className="page-wrapper">  {/* Wrapper to ensure footer is at the bottom of the page */}
       <section className="home">
         <h1 className="home-heading">
-       Amazingly easy content creation.
+          Amazingly easy content creation.
         </h1>
         <ul className="flex-center w-full gap-30">
           {navLinks.slice(1, 5).map((link) => (
@@ -42,7 +42,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
         />
       </section>
 
-      <Footer />
+      <Footer />  {/* Footer placed outside the main content but inside the page wrapper */}
     </div>
   )
 }
