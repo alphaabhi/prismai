@@ -317,7 +317,7 @@
   }
 
   .footer a {
-    @apply text-white hover:text-gray-300;
+    @apply text-black hover:text-opacity-80;
   }
 
   .header-nav_elements {
