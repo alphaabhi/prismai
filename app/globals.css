@@ -312,13 +312,24 @@
   }
   
   .footer {
-    @apply sticky bottom-0 inset-x-0 bg-white text-black font-medium flex justify-center items-center gap-4 py-4 text-sm;
-    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06); /* subtle shadow on top */
-  }
+    width: 100%;
+    padding: 16px 0; /* Adjust padding as needed */
+    background-color: transparent; /* Makes background transparent or remove this line if no background is needed */
+    color: black; /* Text color */
+    text-align: center; /* Centers the text */
+    font-weight: bold; /* Makes text bold */
+}
 
-  .footer a {
-    @apply text-black hover:text-opacity-80;
-  }
+.footer a {
+    color: black; /* Link color */
+    font-weight: bold; /* Makes link text bold */
+    opacity: 1; /* Full opacity by default */
+    transition: opacity 0.3s; /* Smooth transition for opacity changes */
+    text-decoration: none; /* Optional: removes underline from links */
+}
+
+.footer a:hover {
+    opacity: 0.8; /* Dim links on hover */
 
   .header-nav_elements {
     @apply mt-8 flex w-full flex-col items-start gap-5;
