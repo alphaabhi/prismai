@@ -312,7 +312,8 @@
   }
   
   .footer {
-    @apply fixed bottom-0 w-full py-4 bg-black text-white font-bold flex justify-center items-center gap-4 z-50;
+    @apply sticky bottom-0 inset-x-0 bg-white text-black font-medium flex justify-center items-center gap-4 py-4 text-sm;
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06); /* subtle shadow on top */
   }
 
   .footer a {
