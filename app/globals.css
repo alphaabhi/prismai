@@ -326,6 +326,7 @@
     opacity: 1; /* Full opacity by default */
     transition: opacity 0.3s; /* Smooth transition for opacity changes */
     text-decoration: none; /* Optional: removes underline from links */
+    margin-right: 16px;
 }
 
 .footer a:hover {
