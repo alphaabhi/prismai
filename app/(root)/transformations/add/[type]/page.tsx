@@ -15,7 +15,7 @@ const AddTransformationTypePage = async ({ params: { type } }: SearchParamProps)
   const user = await getUserById(userId);
 
   return (
-    <>
+    <div className='transforming-page'>
       <Header 
         title={transformation.title}
         subtitle={transformation.subTitle}
@@ -29,7 +29,9 @@ const AddTransformationTypePage = async ({ params: { type } }: SearchParamProps)
           creditBalance={user.creditBalance}
         />
       </section>
-    </>
+      
+      <Footer /> 
+    </div>
   )
 }
 
